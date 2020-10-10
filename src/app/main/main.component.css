@@ -1,0 +1,18 @@
+nav.navbar {
+    padding: 0 90px;
+    height: 60px;
+    margin-bottom: 60px;
+    background-color: #ee4e34;
+    border-bottom: solid 1px #dddd;
+}
+
+.navbar-nav a {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.content {
+    padding: 0 90px;
+}

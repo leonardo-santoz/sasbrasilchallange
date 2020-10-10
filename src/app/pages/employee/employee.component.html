@@ -1,0 +1,27 @@
+<div class="header">
+  <h1 class="title">Funcionários</h1>
+  <button type="button" class="btn btn-primary" (click)="open(content)">Adicionar</button>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Telefone</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let employee of employees">
+    <tr>
+      <td>{{employee.name}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.phone_number}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #content let-modal>
+  <app-employee-form (onDismiss)="modal.dismiss('Cross click')"></app-employee-form>
+</ng-template>
+
+

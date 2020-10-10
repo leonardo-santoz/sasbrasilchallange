@@ -1,0 +1,16 @@
+<div class="container">
+    <div>
+        <img class="logo" src="assets/img/sasbrasil-logo.png" alt="SAS BRASIL">
+    </div>
+    <form [formGroup]="formSignIn" (ngSubmit)="signIn()" class="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">E-mail</label>
+            <input type="email" class="form-control" formControlName="email" name="email" placeholder="Digite o seu e-mail">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control"  formControlName="password" name="password"placeholder="Digite a sua senha">
+        </div>
+        <button type="submit" class="btn btn-primary">Acessar</button>
+    </form>
+</div>
