@@ -31,3 +31,5 @@
 </ol>
 
 
+<h2>UI Preview</h2>
+<img src="/src/assets/preview_login.png"/>
