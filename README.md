@@ -33,3 +33,7 @@
 
 <h2>UI Preview</h2>
 <img src="/src/assets/img/preview_login.png"/>
+<img src="/src/assets/img/preview_employeelist.png"/>
+<img src="/src/assets/img/preview_employeeform.png"/>
+
+
