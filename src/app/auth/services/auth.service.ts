@@ -14,17 +14,24 @@ interface IAuthResponse {
 export class AuthService {
   apiUrl: string;
 
+  private isAuthenticated = false;
+
   constructor(private http: HttpClient, private router: Router) {
     this.apiUrl = environment.apiUrl;
   }
 
   signIn(email: string, password: string): Observable<IAuthResponse> {
     return this.http.post<IAuthResponse>(`${this.apiUrl}/auth`, {email, password});
+    this.isAuthenticated = true;
   }
 
   signOut() {
     localStorage.removeItem('@sasbrasil_token');
     this.router.navigate(['/acesso'])
+  }
+
+  userIsAuthenticated() {
+    return this.isAuthenticated;
   }
 }
 

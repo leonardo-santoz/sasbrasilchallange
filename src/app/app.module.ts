@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { AuthService } from './auth/services/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 import { AreaFormComponent } from './pages/area/area-form/area-form.component';
+import { HttpService } from './shared/interceptors/http.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,12 @@ import { AreaFormComponent } from './pages/area/area-form/area-form.component';
     MainModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpService,
+      multi: true
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -19,7 +19,7 @@ export class PositionService {
   }
 
   listById(id: string): Observable<Position> {
-    return this.http.get<Position>(`${this.baseUrl}/positions`)
+    return this.http.get<Position>(`${this.baseUrl}/positions/${id}`)
   }
 
   listAll(): Observable<Position[]> {

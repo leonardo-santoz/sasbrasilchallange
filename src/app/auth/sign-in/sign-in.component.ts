@@ -32,7 +32,7 @@ export class SignInComponent implements OnInit {
     this.loading = true;
 
     const { email, password } = this.formSignIn.value;
-
+    console.log(email, password)
     this.authservice.signIn(email, password).subscribe(response => {
       localStorage.setItem('@sasbrasil_token', String(response.token))
       this.router.navigate(['/'])
