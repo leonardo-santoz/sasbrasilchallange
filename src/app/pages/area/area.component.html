@@ -1,0 +1,35 @@
+<div class="header">
+    <h1 class="title">Áreas</h1>
+    <button type="button" class="btn btn-primary" (click)="open()">Adicionar</button>
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Cordenador</th>
+        <th scope=col>Gerente</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let area of areas">
+      <tr>
+        <td>{{area.name}}</td>
+        <td>{{area.description}}</td>
+        <td>{{area.cordinator}}</td>
+        <td>{{area.manager}}</td>
+        <td class="actions">
+          <a (click)="open(area.id)">editar</a>
+          <a (click)=remove(area.id)>remover</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <ng-template #content let-modal>
+    <app-area-form></app-area-form>
+  </ng-template>
+  
+  
+  

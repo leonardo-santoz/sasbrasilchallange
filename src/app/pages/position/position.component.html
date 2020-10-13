@@ -1,0 +1,33 @@
+<div class="header">
+    <h1 class="title">Cargos</h1>
+    <button type="button" class="btn btn-primary" (click)="open()">Adicionar</button>
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Área</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let position of positions">
+      <tr>
+        <td>{{position.name}}</td>
+        <td>{{position.description}}</td>
+        <td>{{position.area}}</td>
+        <td class="actions">
+          <a (click)="open(position.id)">editar</a>
+          <a (click)=remove(position.id)>remover</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <ng-template #content let-modal>
+    <app-position-form></app-position-form>
+  </ng-template>
+  
+  
+  

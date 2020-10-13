@@ -5,12 +5,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home</a>
-            <a class="nav-item nav-link" href="#">Áreas</a>
-            <a class="nav-item nav-link" href="#">Cargos</a>
+            <a class="nav-item nav-link" routerLink="funcionarios">Funcionários</a>
+            <a class="nav-item nav-link" routerLink="areas">Áreas</a>
+            <a class="nav-item nav-link" routerLink="cargos">Cargos</a>
         </div>
     </div>
 </nav>
+
 <div class="content">
-    <app-employee></app-employee>
+    <router-outlet></router-outlet>
 </div>

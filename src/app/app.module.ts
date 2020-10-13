@@ -6,26 +6,30 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/services/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
+import { AreaFormComponent } from './pages/area/area-form/area-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AreaFormComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule,
     AuthModule,
     MainModule,
     HttpClientModule
   ],
   providers: [AuthService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

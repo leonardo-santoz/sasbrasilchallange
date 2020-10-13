@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { EmployeeService } from './services/employee.service';
 import { Employee } from './models/Employee';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
 @Component({
   selector: 'app-employee',
@@ -15,7 +16,6 @@ export class EmployeeComponent implements OnInit {
   employees: Employee[];
   closeResult = '';
 
-
   constructor(private employeeService: EmployeeService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -25,8 +25,26 @@ export class EmployeeComponent implements OnInit {
   listAll() {
     return this.employeeService.listAll().subscribe(employees => {
       this.employees = employees;
-      console.log(employees)
     })
+  }
+
+  remove(id: string) {
+    const confirmDelete = confirm('Deseja excluir este funcionário?')
+
+    if(confirmDelete) {
+      this.employeeService.remove(id).subscribe(() => {
+        alert('excluido com sucesso')
+        this.employees = this.employees.filter(employee => employee.id !== id)
+      }, err => {
+        alert(err)
+      })
+    }
+  }
+
+  open(id?: string)  {
+    const modal = this.modalService.open(EmployeeFormComponent)
+    if(id)
+      modal.componentInstance.id = id;
   }
 
   private getDismissReason(reason: any): string {
@@ -37,13 +55,5 @@ export class EmployeeComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
-  }
-
-  open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
   }
 }
