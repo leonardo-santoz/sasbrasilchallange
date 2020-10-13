@@ -10,15 +10,17 @@ import { EmployeeFormComponent } from './../pages/employee/employee-form/employe
 import { PositionComponent } from './../pages/position/position.component';
 import { PositionFormComponent } from './../pages/position/position-form/position-form.component';
 import { AreaComponent } from '../pages/area/area.component';
+import { AreaFormComponent } from './../pages/area/area-form/area-form.component';
 
 @NgModule({
   declarations: [
-    MainComponent, 
+    MainComponent,
     EmployeeComponent,
     EmployeeFormComponent,
     PositionComponent,
     PositionFormComponent,
-    AreaComponent
+    AreaComponent,
+    AreaFormComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,7 @@ import { AreaComponent } from '../pages/area/area.component';
     ReactiveFormsModule,
   ],
   entryComponents: [
-    EmployeeFormComponent, 
+    EmployeeFormComponent,
     PositionFormComponent]
 })
 export class MainModule { }

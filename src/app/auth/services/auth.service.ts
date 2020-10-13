@@ -22,7 +22,6 @@ export class AuthService {
 
   signIn(email: string, password: string): Observable<IAuthResponse> {
     return this.http.post<IAuthResponse>(`${this.apiUrl}/auth`, {email, password});
-    this.isAuthenticated = true;
   }
 
   signOut() {
@@ -31,6 +30,10 @@ export class AuthService {
   }
 
   userIsAuthenticated() {
+    const token = localStorage.getItem('@sasbrasil_token')
+    if(token)
+      this.isAuthenticated = true
+      
     return this.isAuthenticated;
   }
 }

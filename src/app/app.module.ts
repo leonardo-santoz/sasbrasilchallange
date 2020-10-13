@@ -12,13 +12,11 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/services/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
-import { AreaFormComponent } from './pages/area/area-form/area-form.component';
 import { HttpService } from './shared/interceptors/http.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AreaFormComponent,
   ],
   imports: [
     BrowserModule,

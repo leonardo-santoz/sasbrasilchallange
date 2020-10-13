@@ -5,9 +5,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" routerLink="funcionarios">Funcionários</a>
-            <a class="nav-item nav-link" routerLink="areas">Áreas</a>
-            <a class="nav-item nav-link" routerLink="cargos">Cargos</a>
+            <div class="header-options">
+                <a class="nav-item nav-link" routerLink="funcionarios">Funcionários</a>
+                <a class="nav-item nav-link" routerLink="areas">Áreas</a>
+                <a class="nav-item nav-link" routerLink="cargos">Cargos</a>
+            </div>
+            <a class="logout nav-item nav-link" (click)="logout()">Sair</a>
         </div>
     </div>
 </nav>

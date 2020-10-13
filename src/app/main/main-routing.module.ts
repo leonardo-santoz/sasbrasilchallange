@@ -30,7 +30,7 @@ const routes: Routes = [
         redirectTo: '/funcionarios',
         pathMatch: 'full'
       }
-    ]
+    ],
   }
 ];
 

@@ -13,7 +13,6 @@ import { AuthService } from './../services/auth.service';
 export class SignInComponent implements OnInit {
   user: User;
   formSignIn: FormGroup;
-  loading = false;
 
   constructor(private authservice: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
@@ -29,10 +28,7 @@ export class SignInComponent implements OnInit {
   }
 
   signIn() {
-    this.loading = true;
-
     const { email, password } = this.formSignIn.value;
-    console.log(email, password)
     this.authservice.signIn(email, password).subscribe(response => {
       localStorage.setItem('@sasbrasil_token', String(response.token))
       this.router.navigate(['/'])
