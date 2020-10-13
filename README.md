@@ -32,4 +32,4 @@
 
 
 <h2>UI Preview</h2>
-<img src="/src/assets/preview_login.png"/>
+<img src="/src/assets/img/preview_login.png"/>
