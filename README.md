@@ -27,7 +27,7 @@
 
 <h3>Execute o Projeto</h3>
 <ol>
-    <li>ng server</li>
+    <li>ng serve</li>
 </ol>
 
 
