@@ -16,7 +16,7 @@
 
 <h3>Clone este projeto</h3>
 <ol>
-    <li>git clone </li>
+    <li>git clone https://github.com/leonardo-santoz/sasbrasilchallange-web.git</li>
     <li>cd sasbrasilapichallange-web</li>
 </ol>
 
